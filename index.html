@@ -221,7 +221,6 @@
         <p>&copy; 2024 BetterSolara. All rights reserved.</p>
     </footer>
     <script>
-        async function fetchDownloadCount() {
             const response = await fetch('https://api.github.com/repos/Blitzedzz/BetterSolara/releases');
             const releases = await response.json();
             let totalDownloads = 0;
@@ -233,9 +232,7 @@
             });
 
             document.querySelector('.downloads').textContent = `${totalDownloads} Downloads`;
-        }
 
-        fetchDownloadCount();
     </script>
 </body>
 </html>
