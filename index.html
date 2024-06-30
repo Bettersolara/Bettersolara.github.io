@@ -17,18 +17,19 @@
             background-color: #161b22;
             color: #c9d1d9;
             line-height: 1.6;
+            overflow-x: hidden; /* Prevent horizontal scroll on smaller screens */
         }
 
         header {
             display: flex;
             justify-content: space-between;
             align-items: center;
-            padding: 20px 40px;
+            padding: 12px 24px;
             background-color: #161b22;
         }
 
         .logo {
-            font-size: 24px;
+            font-size: 18px;
             font-weight: 700;
             color: #ffffff;
         }
@@ -40,10 +41,11 @@
         nav ul {
             list-style: none;
             display: flex;
+            margin-right: -20px; /* Adjust for margin collapse */
         }
 
         nav ul li {
-            margin-left: 20px;
+            margin-left: 16px;
         }
 
         nav ul li a {
@@ -57,7 +59,7 @@
         }
 
         nav ul li a.connect {
-            padding: 8px 16px;
+            padding: 8px 12px;
             border: 1px solid #58a6ff;
             border-radius: 5px;
         }
@@ -66,26 +68,34 @@
             display: flex;
             justify-content: center;
             align-items: center;
-            height: 80vh;
+            min-height: 80vh;
             background: linear-gradient(to right, rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url('bg.jpg') no-repeat center center/cover;
             text-align: center;
             color: #ffffff;
-            padding: 20px;
+            padding: 24px;
         }
 
         .hero .content {
-            max-width: 800px;
+            max-width: 90%;
+            margin: 0 auto;
         }
 
         .hero h1 {
-            font-size: 48px;
-            margin-bottom: 20px;
+            font-size: 36px;
+            margin-bottom: 16px;
             font-weight: 700;
         }
 
         .hero p {
-            font-size: 20px;
+            font-size: 18px;
             margin-bottom: 20px;
+        }
+
+        .buttons {
+            margin-top: 20px;
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
         }
 
         .buttons .btn {
@@ -120,28 +130,26 @@
         }
 
         .features {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 20px;
-            padding: 60px 20px;
+            padding: 24px;
             background-color: #161b22;
         }
 
         .feature {
             text-align: center;
-            padding: 30px;
+            padding: 24px;
             border: 1px solid #21262d;
             border-radius: 10px;
             transition: transform 0.3s ease;
+            margin-bottom: 20px;
         }
 
         .feature:hover {
-            transform: translateY(-10px);
+            transform: translateY(-5px);
         }
 
         .feature .icon {
             display: block;
-            margin: 0 auto 20px;
+            margin: 0 auto 12px;
             width: 48px;
             height: 48px;
         }
@@ -152,20 +160,19 @@
         }
 
         .feature h2 {
-            font-size: 24px;
-            margin-bottom: 10px;
+            font-size: 20px;
+            margin-bottom: 8px;
             color: #58a6ff;
         }
 
         .feature p {
             font-size: 16px;
-            margin-bottom: 20px;
             color: #8b949e;
         }
 
         footer {
             text-align: center;
-            padding: 20px;
+            padding: 12px 24px;
             background-color: #161b22;
             color: #8b949e;
         }
@@ -220,6 +227,7 @@
         <p>&copy; 2024 BetterSolara. All rights reserved.</p>
     </footer>
     <script>
+        async function fetchDownloads() {
             const response = await fetch('https://api.github.com/repos/Blitzedzz/BetterSolara/releases');
             const releases = await response.json();
             let totalDownloads = 0;
@@ -231,7 +239,9 @@
             });
 
             document.querySelector('.downloads').textContent = `${totalDownloads} Downloads`;
+        }
 
+        fetchDownloads();
     </script>
 </body>
 </html>
