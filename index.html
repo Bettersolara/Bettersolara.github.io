@@ -17,7 +17,7 @@
             background-color: #161b22;
             color: #c9d1d9;
             line-height: 1.6;
-            overflow-x: hidden; /* Prevent horizontal scroll on smaller screens */
+            overflow-x: hidden; 
         }
 
         header {
@@ -41,7 +41,7 @@
         nav ul {
             list-style: none;
             display: flex;
-            margin-right: -20px; /* Adjust for margin collapse */
+            margin-right: -20px; 
         }
 
         nav ul li {
@@ -176,6 +176,58 @@
             background-color: #161b22;
             color: #8b949e;
         }
+
+        .credits {
+            margin-top: 24px;
+            padding: 12px 24px;
+            background-color: #161b22;
+            color: #8b949e;
+            text-align: center;
+        }
+
+        .credits h3 {
+            color: #58a6ff;
+            margin-bottom: 8px;
+        }
+
+        .credits .team-member {
+            display: inline-block;
+            margin: 0 8px;
+            font-weight: 500;
+        }
+
+        .credits .team-member:hover {
+            text-decoration: underline;
+        }
+
+        
+        .team-member-card {
+            background-color: #21262d;
+            padding: 16px;
+            border-radius: 10px;
+            margin: 10px;
+            text-align: center;
+            color: #c9d1d9;
+            display: inline-block;
+            width: 200px;
+            margin-bottom: 20px;
+        }
+
+        .team-member-card img {
+            width: 100px;
+            height: 100px;
+            border-radius: 50%;
+            margin-bottom: 10px;
+        }
+
+        .team-member-card h4 {
+            margin-bottom: 5px;
+        }
+
+        .team-member-card p {
+            font-size: 14px;
+            margin-bottom: 5px;
+        }
     </style>
 </head>
 <body>
@@ -222,6 +274,23 @@
             <h2>No CPU spikes when using bettersolara!</h2>
             <p>Bettersolara does not make your CPU spike at all!</p>
         </div>
+    </section>
+    <section class="credits">
+        <h3>Credits</h3>
+        <div class="team-member-card">
+            <img src="https://cdn.discordapp.com/avatars/1206758465150787659/a0e6c9b1db906dc9b4d5642713527c3c.png?size=1024" alt="Blit's avatar">
+            <h4>Blitzedzz</h4>
+            <p>Owner</p>
+            <p>Lead developer</p>
+        </div>
+        <div class="team-member-card">
+            <img src="https://cdn.discordapp.com/avatars/888099443574984754/c91ed9494800084a4ea4bacec1a570a3.png?size=1024" alt="Clav's avatar">
+            <h4>NotClavilux</h4>
+            <p>idk what to put here</p>
+            <p>Developer</p>
+        </div>
+
+        <p>And thanks to all of our black nigga slaves!</p>
     </section>
     <footer>
         <p>&copy; 2024 BetterSolara. All rights reserved.</p>
