@@ -407,17 +407,25 @@ body.light-mode .team-member-card {
         <p>&copy; 2024 BetterSolara. All rights reserved.</p>
     </footer>
     <script>
-        const darkModeToggle = document.getElementById('dark-mode-toggle');
-        const body = document.body;
+const darkModeToggle = document.getElementById('dark-mode-toggle');
+const body = document.body;
 
-        darkModeToggle.addEventListener('click', () => {
-            body.classList.toggle('light-mode');
-            if (body.classList.contains('light-mode')) {
-                darkModeToggle.textContent = 'Dark Mode';
-            } else {
-                darkModeToggle.textContent = 'Light Mode';
-            }
-        });
+darkModeToggle.addEventListener('click', () => {
+    body.classList.toggle('light-mode');
+    if (body.classList.contains('light-mode')) {
+        darkModeToggle.textContent = 'Dark Mode';
+    } else {
+        darkModeToggle.textContent = 'Light Mode';
+    }
+});
+
+// Initialize button text based on current mode
+if (body.classList.contains('light-mode')) {
+    darkModeToggle.textContent = 'Dark Mode';
+} else {
+    darkModeToggle.textContent = 'Light Mode';
+}
+
 
 
 
