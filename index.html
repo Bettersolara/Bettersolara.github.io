@@ -407,17 +407,21 @@ body.light-mode .team-member-card {
     </footer>
     <script>
         async function fetchDownloads() {
-            const response = await fetch('https://api.github.com/repos/Blitzedzz/BetterSolara/releases');
-            const releases = await response.json();
-            let totalDownloads = 0;
+            try {
+                const response = await fetch('https://api.github.com/repos/Blitzedzz/BetterSolara/releases');
+                const releases = await response.json();
+                let totalDownloads = 0;
 
-            releases.forEach(release => {
-                release.assets.forEach(asset => {
-                    totalDownloads += asset.download_count;
+                releases.forEach(release => {
+                    release.assets.forEach(asset => {
+                        totalDownloads += asset.download_count;
+                    });
                 });
-            });
 
-            document.querySelector('.downloads').textContent = ${totalDownloads} Downloads;
+                document.querySelector('.downloads').textContent = `${totalDownloads} Downloads`;
+            } catch (error) {
+                document.querySelector('.downloads').textContent = 'Failed to load downloads';
+            }
         }
 
         fetchDownloads();
